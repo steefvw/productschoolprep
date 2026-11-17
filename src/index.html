@@ -56,7 +56,7 @@ button{border:0;cursor:pointer;background:none;padding:0;text-align:left}
 .foot{font-size:.85rem;color:var(--muted)}
 .path{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 10px;font:700 1rem/1.2 var(--display)}
 .path li{display:flex;align-items:center;gap:8px}
-.path li i{width:14px;height:14px;border-radius:3px;flex:none}
+.path li i{width:14px;height:14px;border-radius:3px;flex:none;background:var(--fg)}
 .path li:not(:last-child)::after{content:"→";margin-left:6px;color:var(--muted);font-weight:500}
 
 /* player */
@@ -413,7 +413,7 @@ function home(){
   app.style.removeProperty('--c');
   app.innerHTML=`<div class="top"><h1>PM Foundations prep</h1>
   <p class="lead">Six modules, one for each live session of the course, about 15 minutes each. Every module follows the same four steps:</p>
-  <ol class="path"><li><i style="background:var(--yellow)"></i>The key idea</li><li><i style="background:var(--coral)"></i>Quick practice</li><li><i style="background:var(--blue)"></i>Questions for class</li><li><i style="background:var(--green)"></i>A piece of your pitch</li></ol>
+  <ol class="path"><li><i></i>The key idea</li><li><i></i>Quick practice</li><li><i></i>Questions for class</li><li><i></i>A piece of your pitch</li></ol>
   ${done?`<p class="foot">${done} of ${total} cards done.</p>`:''}</div>
   <div class="tiles">${M.map((m,i)=>`<a class="tile" href="#${m.id}" style="--c:${C[m.col][0]};--on:${C[m.col][1]};text-decoration:none">
     <span class="shape"></span><span class="num">${i+1}</span><h3>${m.name}${seenCount(m)>=m.cards.length?' ✓':''}</h3><small>${m.official}</small>
