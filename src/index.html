@@ -615,7 +615,6 @@ function confetti(){
 
 function intro(){
   app.style.removeProperty('--c');
-  try{localStorage.setItem('pmprep-intro','1')}catch(e){}
   app.innerHTML=`<section class="intro"><div class="msg">
    <p>My friend enjoyed the Product Management Foundations course from Product School and recommended it to me.</p>
    <p>I made this little course prep tool to get a sense of what’s being discussed there. Play with it; I hope you like it.</p>
@@ -627,8 +626,7 @@ function intro(){
 
 function route(){
   const h=location.hash.slice(1),m=M.find(x=>x.id===h);keyNav=null;
-  let seen=false;try{seen=!!localStorage.getItem('pmprep-intro')}catch(e){}
-  if(m)play(m);else if(h==='pitch')pitch();else if(h==='intro'||(!h&&!seen))intro();else home();
+  if(m)play(m);else if(h==='pitch')pitch();else if(h==='home')home();else intro();
   scrollTo(0,0);
 }
 addEventListener('hashchange',route);route();
