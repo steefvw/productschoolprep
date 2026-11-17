@@ -74,7 +74,7 @@ button{border:0;cursor:pointer;background:none;padding:0;text-align:left}
 .lead{font-size:1.1rem;max-width:52ch}
 .cover{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px;font:700 1.05rem/1.2 var(--display)}
 .cover li{display:flex;align-items:center;gap:9px}
-.cover li::before{content:"";width:10px;height:10px;border-radius:2px;background:currentColor;opacity:.5}
+.cover li::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
 .make{opacity:.85}
 @keyframes in{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
 .ctrl{display:flex;gap:12px}
@@ -221,7 +221,7 @@ const C={yellow:['var(--yellow)','var(--ink)'],coral:['var(--coral)','var(--ink)
 
 const M=[
 {id:'m1',name:'Think',official:'Develop Strategic Product Thinking',col:'yellow',artifact:'Problem Hook',cards:[
- {t:'big',h:'What did it change?',p:'That’s the question a PM keeps asking. Shipping a feature is output. People behaving differently because of it, in a way that also helps the business, is the outcome you get judged on.',on:['Outputs vs outcomes','Weighing ideas','B2C vs B2B','Framing a problem']},
+ {t:'big',h:'Product thinking starts with one question: what did it change?',p:'Shipping a feature is output. People behaving differently because of it, in a way that also helps the business, is the outcome. That’s what a PM gets judged on.',on:['Outputs vs outcomes','Weighing ideas','B2C vs B2B','Framing a problem']},
  {t:'sort',h:'Output or outcome?',buckets:['Output','Outcome'],hints:['We made a thing','Something changed'],items:[
   ['Launched dark mode',0,'A launch is something you made. Nothing has changed for the user yet.'],
   ['Checkout time dropped 30%',1,'Users feel this change. That makes it an outcome.'],
@@ -252,7 +252,7 @@ const M=[
  {t:'build'}]},
 
 {id:'m2',name:'Discover',official:'Discover Product Opportunities via Qualitative Signals',col:'coral',artifact:'Persona & Journey Map',cards:[
- {t:'big',h:'People already get by without you.',p:'Before your product exists, people manage with a spreadsheet, a group chat or a habit. Switching costs them effort. So you need to understand that workaround well, and be clearly better than it.',on:['Workarounds as clues','Personas','Journey maps','The experience gap']},
+ {t:'big',h:'Discovery means learning how people get by without you.',p:'Before your product exists, people manage with a spreadsheet, a group chat or a habit. Switching costs them effort. So you need to understand that workaround well, and be clearly better than it.',on:['Workarounds as clues','Personas','Journey maps','The experience gap']},
  {t:'reveal',h:'Workarounds are clues',p:'Each one is someone patching a gap. Tap to see which gap.',tiles:[
   ['Screenshots of receipts','Logging an expense takes too long.'],
   ['A spreadsheet with nine tabs','The tool doesn’t fit how the team plans.'],
@@ -271,7 +271,7 @@ const M=[
  {t:'build'}]},
 
 {id:'m3',name:'Measure',official:'Use Analytics and Metrics for Data-Driven Decisions',col:'blue',artifact:'Testable Hypothesis',cards:[
- {t:'big',h:'Which numbers actually matter?',p:'Dashboards fill up with totals that only ever go up. The useful numbers are rates tied to user value. When one of those moves, you know where to look and what to try next.',on:['Vanity vs strategic metrics','The AARRR funnel','From data to hypothesis']},
+ {t:'big',h:'Metrics are only useful if they help you decide.',p:'Dashboards fill up with totals that only ever go up. The useful numbers are rates tied to user value. When one of those moves, you know where to look and what to try next.',on:['Vanity vs strategic metrics','The AARRR funnel','From data to hypothesis']},
  {t:'sort',h:'Vanity or strategic?',buckets:['Vanity','Strategic'],hints:['Only goes up','Changes a decision'],items:[
   ['Total downloads, all time',0,'It can only go up, so it never tells you to change course.'],
   ['Share of new users who finish setup',1,'A rate. If it drops, you know exactly where to look.'],
@@ -322,7 +322,7 @@ const M=[
  {t:'build'}]},
 
 {id:'m5',name:'Test',official:'Run Effective Product Experimentation',col:'purple',artifact:'Experiment Brief',cards:[
- {t:'big',h:'Find out cheaply before you build expensively.',p:'Every idea rests on a few guesses. Test the riskiest one first. The right method depends on what you want to learn, how much traffic you have and what it costs to be wrong.',on:['Six ways to test','Choosing a method','The experiment brief']},
+ {t:'big',h:'Experiments let you find out cheaply before you build.',p:'Every idea rests on a few guesses. Test the riskiest one first. The right method depends on what you want to learn, how much traffic you have and what it costs to be wrong.',on:['Six ways to test','Choosing a method','The experiment brief']},
  {t:'reveal',h:'Six ways to test an idea',tiles:[
   ['A/B test','Two versions on live traffic. Compare one metric.'],
   ['Fake door','Show the button before building the feature. Count the clicks.'],
@@ -348,7 +348,7 @@ const M=[
  {t:'build'}]},
 
 {id:'m6',name:'Launch',official:'Launch Impactful GTM Plans',col:'pink',artifact:'GTM Launch Plan',cards:[
- {t:'big',h:'Launching is more than pressing deploy.',p:'Someone has to decide who hears about it, where, and in what order. A small fix needs a release note. A new product needs a plan.',on:['Five GTM choices','Sizing a launch','Channels','Rolling out in phases']},
+ {t:'big',h:'Go-to-market is how a change reaches the right people.',p:'Someone has to decide who hears about it, where, and in what order. A small fix needs a release note. A new product needs a plan.',on:['Five GTM choices','Sizing a launch','Channels','Rolling out in phases']},
  {t:'steps',h:'A GTM plan makes five choices.',steps:[
   ['Goal','What success looks like'],['Audience','Who needs to hear it'],['Size','How loud to be'],['Channels','Where to say it'],['Phases','In what order']]},
  {t:'cols',h:'Match the noise to the change',cols:[
