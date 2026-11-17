@@ -1,0 +1,11 @@
+wifi/.server.log
+.DS_Store
+node_modules/
+.env
+.env.*
+.dev.vars
+.secrets/
+*.pem
+*.key
+AGENT_PROMPT.md
+.wrangler/
