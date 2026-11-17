@@ -191,6 +191,7 @@ button{border:0;cursor:pointer;background:none;padding:0;text-align:left}
 .intro .msg{display:flex;flex-direction:column;gap:22px;min-width:0}
 .intro .msg p{font:600 clamp(1.3rem,3.2vw,1.85rem)/1.35 var(--display);letter-spacing:-.01em;max-width:30ch;text-wrap:pretty}
 .intro .msg a.inl{color:inherit;text-decoration-color:var(--coral);text-decoration-thickness:4px;text-underline-offset:5px}
+.intro .msg p.fyi{font:500 .95rem/1.4 var(--body);color:var(--muted);letter-spacing:0;max-width:none}
 .intro .acts{display:flex;flex-wrap:wrap;gap:12px}
 .intro .acts a{text-decoration:none}
 .intro .btn.go{flex:none;padding:16px 26px}
@@ -619,6 +620,7 @@ function intro(){
    <p>My friend enjoyed the Product Management Foundations course from Product School and recommended it to me.</p>
    <p>I made this little course prep tool to get a sense of what’s being discussed there. Play with it; I hope you like it.</p>
    <p>If you do, consider signing up for <a class="inl" href="${REF_URL}" target="_blank" rel="noopener">Product Management Foundations</a>.</p>
+   <p class="fyi">FYI: I wrote this intro text. The rest of the language was written by Claude.</p>
    <div class="acts"><a class="btn go" href="#home" style="--c:var(--blue);--on:var(--paper)">Start the prep →</a><a class="btn" href="${REF_URL}" target="_blank" rel="noopener" style="color:inherit">See the course</a></div>
   </div><div class="shapes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></section>`;
 }

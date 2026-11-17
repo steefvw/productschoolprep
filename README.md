@@ -4,6 +4,8 @@
 
 A friend enjoyed Product School's [Product Management Foundations](https://productschool.com/courses/product-management-certification) course and recommended it to me. I built this small prep tool to get a feel for what's covered there before the live sessions, so class time can go to questions and people instead of definitions.
 
+*FYI: I wrote this intro text. The rest of the language, here and in the app, was written by Claude.*
+
 It's short on purpose: one idea per card, lots of tapping and sorting, very little reading. It was designed with an ADHD brain in mind.
 
 ![The module overview](docs/screenshots/home.png)
