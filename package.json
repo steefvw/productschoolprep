@@ -1,0 +1,14 @@
+{
+  "name": "pm-foundations-prep",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bite-sized, interactive prep for Product School's Product Management Foundations course.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && python3 -m http.server 8000 --directory dist",
+    "deploy": "npm run build && playhz deploy dist"
+  },
+  "homepage": "https://pm-prep.playhz.com",
+  "repository": "github:steefvw/productschoolprep"
+}

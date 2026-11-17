@@ -48,16 +48,26 @@ Every module follows the same four steps: **the key idea → quick practice → 
 
 ## Run it yourself
 
-It's a single HTML file with no build step and no dependencies apart from Google Fonts.
+It's a single page with no dependencies apart from Google Fonts. The build step is one small Node script (Node 18+).
 
 ```bash
 git clone https://github.com/steefvw/productschoolprep
-cd productschoolprep/wifi
-python3 -m http.server 8000   # then open http://localhost:8000
+cd productschoolprep
+npm run preview   # builds, then serves at http://localhost:8000
 ```
 
-- `index.html` is the source.
-- `wifi/index.html` is the same page wrapped as a standalone document. That's the copy that gets hosted.
+```
+src/index.html       the page: markup, styles and script in one file
+scripts/build.mjs    wraps it into a standalone document
+dist/index.html      build output (not committed), what gets hosted
+docs/screenshots/    images for this README
+```
+
+| Command | Does |
+|---|---|
+| `npm run build` | Writes `dist/index.html` |
+| `npm run preview` | Builds and serves `dist/` locally |
+| `npm run deploy` | Builds and publishes `dist/` to playhz |
 
 ## Note
 
