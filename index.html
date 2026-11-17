@@ -68,6 +68,10 @@ button{border:0;cursor:pointer;background:none;padding:0;text-align:left}
 .stage.full h2{font-size:clamp(2rem,5.6vw,3.5rem);max-width:18ch}
 .stage.full .lead{font-size:1.2rem;max-width:48ch;opacity:.92}
 .lead{font-size:1.1rem;max-width:52ch}
+.cover{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px;font:700 1.05rem/1.2 var(--display)}
+.cover li{display:flex;align-items:center;gap:9px}
+.cover li::before{content:"";width:10px;height:10px;border-radius:2px;background:currentColor;opacity:.5}
+.make{opacity:.85}
 @keyframes in{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
 .ctrl{display:flex;gap:12px}
 .btn{background:var(--soft);border-radius:var(--rs);padding:14px 22px;font-weight:700;text-align:center}
@@ -212,7 +216,7 @@ const C={yellow:['var(--yellow)','var(--ink)'],coral:['var(--coral)','var(--ink)
 
 const M=[
 {id:'m1',name:'Think',official:'Develop Strategic Product Thinking',col:'yellow',artifact:'Problem Hook',cards:[
- {t:'big',h:'Outputs are what you ship. Outcomes are what changes.',p:'A PM is judged on outcomes: a measurable change in what users do that also helps the business. Features are the means.'},
+ {t:'big',h:'What did it change?',p:'That’s the question a PM keeps asking. Shipping a feature is output. People behaving differently because of it, in a way that also helps the business, is the outcome you get judged on.',on:['Outputs vs outcomes','Weighing ideas','B2C vs B2B','Framing a problem']},
  {t:'sort',h:'Output or outcome?',buckets:['Output','Outcome'],hints:['We made a thing','Something changed'],items:[
   ['Launched dark mode',0,'A launch is something you made. Nothing has changed for the user yet.'],
   ['Checkout time dropped 30%',1,'Users feel this change. That makes it an outcome.'],
@@ -220,11 +224,11 @@ const M=[
   ['Weekly active users up 12%',1,'Behavior changed. That is the result you ship for.'],
   ['Closed 14 tickets this sprint',0,'Tickets show how busy the team was, not what improved.'],
   ['Support requests cut in half',1,'Fewer people get stuck. Something real changed.']]},
- {t:'cols',h:'Prioritize on three pillars.',p:'Score every idea on all three. Strong on one is not enough.',cols:[
+ {t:'cols',h:'Three questions for every idea',p:'An idea that only scores well on one of these usually isn’t worth doing yet.',cols:[
   ['User value','Does it fix a real pain?','Parents waste 2 hours a week planning meals.'],
   ['Business value','Does it move a number we care about?','Planners who finish a plan stay 3× longer.'],
   ['Effort','What does it cost to build?','Two weeks, one squad.']]},
- {t:'vs',h:'B2C and B2B differ in who buys and how.',a:'B2C',b:'B2B',rows:[
+ {t:'vs',h:'Selling to people vs selling to companies',a:'B2C',b:'B2B',rows:[
   ['The user buys','A boss or buyer signs'],['Decides in seconds','Decides in months'],['Habit and emotion','ROI and risk'],['Grows by word of mouth','Grows through sales']]},
  {t:'sort',h:'B2C or B2B?',buckets:['B2C','B2B'],items:[
   ['Duolingo',0,'One person downloads it and uses it. Buyer and user are the same.'],
@@ -233,7 +237,7 @@ const M=[
   ['Downloaded on the couch in 30 seconds',0,'One person, one fast decision. Consumer behavior.'],
   ['Procurement needs a security review',1,'Only companies have procurement and security reviews.'],
   ['Growth through TikTok',0,'Viral reach works on people. Companies rarely buy from a feed.']]},
- {t:'steps',h:'A problem hook has four parts.',steps:[
+ {t:'steps',h:'A problem hook in four parts',steps:[
   ['Who','Busy parents'],['Pain','can’t plan a week of dinners'],['Cause','because recipes and shopping live in different places'],['Value at stake','so they overspend on takeaway']]},
  {t:'quiz',q:[
   ['Which one is an outcome?',['We shipped onboarding v2','New users finish setup twice as fast','The team closed 30 tickets'],1,'Shipping and closing tickets are outputs. Faster setup is a change for the user.'],
@@ -243,16 +247,16 @@ const M=[
  {t:'build'}]},
 
 {id:'m2',name:'Discover',official:'Discover Product Opportunities via Qualitative Signals',col:'coral',artifact:'Persona & Journey Map',cards:[
- {t:'big',h:'The status quo is your main competitor.',p:'Most people already cope somehow: a spreadsheet, a sticky note, a habit. Switching takes effort, so the product has to be clearly better than what they do today.'},
- {t:'reveal',h:'Every workaround points at a problem.',p:'Tap to see what each one is telling you.',tiles:[
+ {t:'big',h:'People already get by without you.',p:'Before your product exists, people manage with a spreadsheet, a group chat or a habit. Switching costs them effort. So you need to understand that workaround well, and be clearly better than it.',on:['Workarounds as clues','Personas','Journey maps','The experience gap']},
+ {t:'reveal',h:'Workarounds are clues',p:'Each one is someone patching a gap. Tap to see which gap.',tiles:[
   ['Screenshots of receipts','Logging an expense takes too long.'],
   ['A spreadsheet with nine tabs','The tool doesn’t fit how the team plans.'],
   ['Texting yourself reminders','Capturing a task takes too many taps.'],
   ['Asking the same colleague every time','Nobody can find the answer on their own.']]},
- {t:'persona',h:'A persona is one specific person.'},
- {t:'journey',h:'A journey map shows each step and how it feels.',p:'The lowest point is usually where a product can help most. Tap each step of Maya’s week.'},
- {t:'journey',gap:1,h:'The experience gap',p:'The distance between what she expects and what she gets. The step with the widest gap is usually the best place to start.'},
- {t:'vs',h:'Past behavior is better evidence than opinions.',a:'Weak signal',b:'Strong signal',rows:[
+ {t:'persona',h:'Design for one person you can picture'},
+ {t:'journey',h:'Follow Maya through her week',p:'Each dot is a step. Higher means happier. The low point is usually where a product can help most.'},
+ {t:'journey',gap:1,h:'The experience gap',p:'The space between what Maya expects and what she actually gets. Where that space is widest is usually the best place to start.'},
+ {t:'vs',h:'What people do beats what they say',a:'Weak signal',b:'Strong signal',rows:[
   ['“I would use that”','“Last week I did this”'],['Feature wish lists','Hacks and workarounds'],['Polite compliments','Sighs, swearing, giving up']]},
  {t:'quiz',q:[
   ['Who is usually your top competitor?',['The market leader','The status quo','A new startup'],1,'Most people don’t switch to a rival. They keep doing what they already do.'],
@@ -262,7 +266,7 @@ const M=[
  {t:'build'}]},
 
 {id:'m3',name:'Measure',official:'Use Analytics and Metrics for Data-Driven Decisions',col:'blue',artifact:'Testable Hypothesis',cards:[
- {t:'big',h:'A useful metric changes a decision.',p:'Vanity metrics are totals that only go up. Strategic metrics are rates tied to user value, and they show where to act.'},
+ {t:'big',h:'Which numbers actually matter?',p:'Dashboards fill up with totals that only ever go up. The useful numbers are rates tied to user value. When one of those moves, you know where to look and what to try next.',on:['Vanity vs strategic metrics','The AARRR funnel','From data to hypothesis']},
  {t:'sort',h:'Vanity or strategic?',buckets:['Vanity','Strategic'],hints:['Only goes up','Changes a decision'],items:[
   ['Total downloads, all time',0,'It can only go up, so it never tells you to change course.'],
   ['Share of new users who finish setup',1,'A rate. If it drops, you know exactly where to look.'],
@@ -270,10 +274,10 @@ const M=[
   ['Week-4 retention',1,'It shows whether people keep getting value. You can act on it.'],
   ['Followers',0,'Feels good, changes no decision.'],
   ['Revenue per active user',1,'It ties usage to the business. You can act on it.']]},
- {t:'funnel',h:'The AARRR funnel',p:'Five stages from first visit to payment. The stage with the biggest drop is where to investigate. Tap a stage.'},
- {t:'steps',h:'From data to hypothesis.',steps:[
+ {t:'funnel',h:'The AARRR funnel',p:'Five stages from first visit to paying customer. Look for the biggest drop between two stages. That’s where to dig.'},
+ {t:'steps',h:'From a number to something you can test',steps:[
   ['Data','4 in 5 sign-ups never make a first plan'],['Insight','Setup asks 12 questions before any value'],['Hypothesis','A 3-question setup lifts activation'],['Test','Run it and decide']]},
- {t:'reveal',h:'A testable hypothesis has four parts.',tiles:[
+ {t:'reveal',h:'What makes a hypothesis testable',tiles:[
   ['Change','What we will do differently.'],
   ['Success metric','The number that should move, and by how much.'],
   ['Guardrail','The number that must not get worse.'],
@@ -286,18 +290,18 @@ const M=[
  {t:'build'}]},
 
 {id:'m4',name:'Plan',official:'Build High-Velocity Product Roadmaps',col:'green',artifact:'Roadmap & Simple PRD',cards:[
- {t:'big',h:'A roadmap shows priorities in order.',p:'It tells everyone what the team works on first and why. It communicates direction and sequence, not promised dates.'},
- {t:'sort',h:'Effort vs value: where does it land?',grid:1,buckets:['Quick win','Big bet','Fill-in','Time sink'],hints:['High value · low effort','High value · high effort','Low value · low effort','Low value · high effort'],items:[
+ {t:'big',h:'A roadmap is a list of priorities, not a calendar.',p:'It shows what the team works on first and why. Firm near the top, looser further out. The hard part is deciding what has to wait.',on:['Effort vs value','Now, Next, Later','Scoping an MVP','A one-page PRD']},
+ {t:'sort',h:'Where does each idea land?',grid:1,buckets:['Quick win','Big bet','Fill-in','Time sink'],hints:['High value · low effort','High value · high effort','Low value · low effort','Low value · high effort'],items:[
   ['Reorder last week’s plan in one tap. Users beg for it. Two days.',0,'Users beg for it and it takes two days. High value, low effort.'],
   ['Build a plan from a photo of your fridge. Huge demand. Four months.',1,'Huge demand, but four months of work. High value, high effort.'],
   ['New colors for the app icon. Nobody asked. One afternoon.',2,'Nobody asked, but it’s one afternoon. Low value, low effort.'],
   ['Rebuild the settings page from scratch. Nobody asked. Six weeks.',3,'Nobody asked and it eats six weeks. Low value, high effort.'],
   ['Add a “copy shopping list” button. Top request. One day.',0,'Top request, one day. Read value first, then effort.']]},
- {t:'cols',h:'Now, Next, Later.',p:'Certainty drops as you move right.',cols:[
+ {t:'cols',h:'Now, Next, Later',p:'The further right, the less you’ve decided.',cols:[
   ['Now','Committed. Scope is clear.','One-tap reorder'],
   ['Next','Planned. Still shaping.','Shared family plan'],
   ['Later','Ideas. Fuzzy on purpose.','Fridge photo planner']]},
- {t:'cols',h:'Scope the MVP with MoSCoW.',p:'Writing down what is out prevents scope creep later.',cols:[
+ {t:'cols',h:'Scope the MVP with MoSCoW',p:'The Won’t column saves you the most arguments later.',cols:[
   ['Must','No launch without it.','Create a weekly plan'],
   ['Should','Important, can follow soon.','Swap one meal'],
   ['Could','Nice if time allows.','Share with a partner'],
@@ -313,22 +317,22 @@ const M=[
  {t:'build'}]},
 
 {id:'m5',name:'Test',official:'Run Effective Product Experimentation',col:'purple',artifact:'Experiment Brief',cards:[
- {t:'big',h:'Test the riskiest assumption first, as cheaply as you can.',p:'Three things decide the method: the question you are asking, how much traffic you have, and the cost of being wrong.'},
- {t:'reveal',h:'Six ways to test.',tiles:[
+ {t:'big',h:'Find out cheaply before you build expensively.',p:'Every idea rests on a few guesses. Test the riskiest one first. The right method depends on what you want to learn, how much traffic you have and what it costs to be wrong.',on:['Six ways to test','Choosing a method','The experiment brief']},
+ {t:'reveal',h:'Six ways to test an idea',tiles:[
   ['A/B test','Two versions on live traffic. Compare one metric.'],
   ['Fake door','Show the button before building the feature. Count the clicks.'],
   ['Prototype test','Five people, a clickable mock. Watch them try.'],
   ['Concierge','Deliver it by hand to a few users first.'],
   ['Staged rollout','Ship to 5%, watch the guardrails, then widen.'],
   ['Interviews','Ask 5 to 8 people about the last time it happened.']]},
- {t:'picker',h:'Pick your method.'},
+ {t:'picker',h:'Which method fits your situation?'},
  {t:'sort',h:'Which test fits?',buckets:['A/B test','Fake door','Prototype test'],items:[
   ['Does “Start free” beat “Try now”? 50,000 visits a day.',0,'Two versions and plenty of traffic. Compare them live.'],
   ['Would anyone want a meal-swap feature? It isn’t built.',1,'It isn’t built, so measure demand first. Show the button and count clicks.'],
   ['Can people find the shopping list in the new menu?',2,'This asks whether people can use it. Watch five of them try.'],
   ['Is there demand for a family plan?',1,'A demand question. Show the offer and count interest before building.'],
   ['Which of two checkout pages converts better?',0,'Two live versions and one metric. Split the traffic.']]},
- {t:'reveal',h:'Write the decision rule before you see the data.',p:'An experiment brief fits on one page.',tiles:[
+ {t:'reveal',h:'Write the decision rule before you see the data.',p:'Otherwise it’s too easy to read the results the way you hoped. The whole brief fits on one page.',tiles:[
   ['Hypothesis','The guess you are testing.'],['Method','How you will test it.'],['Audience','Who sees it, and how many.'],
   ['Success metric','The number that should move.'],['Guardrails','What must not break.'],['Decision rule','If X, ship. If Y, stop.']]},
  {t:'quiz',q:[
@@ -339,10 +343,10 @@ const M=[
  {t:'build'}]},
 
 {id:'m6',name:'Launch',official:'Launch Impactful GTM Plans',col:'pink',artifact:'GTM Launch Plan',cards:[
- {t:'big',h:'A launch is a sequence of steps.',p:'A go-to-market plan decides who hears about a change, through which channels and in what order, so it reaches the people it was built for.'},
+ {t:'big',h:'Launching is more than pressing deploy.',p:'Someone has to decide who hears about it, where, and in what order. A small fix needs a release note. A new product needs a plan.',on:['Five GTM choices','Sizing a launch','Channels','Rolling out in phases']},
  {t:'steps',h:'A GTM plan makes five choices.',steps:[
   ['Goal','What success looks like'],['Audience','Who needs to hear it'],['Size','How loud to be'],['Channels','Where to say it'],['Phases','In what order']]},
- {t:'cols',h:'Size the launch to the change.',cols:[
+ {t:'cols',h:'Match the noise to the change',cols:[
   ['Small','Release note. In-app tip.','A fix or a tweak'],
   ['Medium','Email, blog, banner, sales brief.','A new feature'],
   ['Big','Campaign, press, event, full training.','A new product or market']]},
@@ -355,7 +359,7 @@ const M=[
  {t:'reveal',h:'Four types of channel',p:'Pick the ones your audience already uses.',tiles:[
   ['Owned','In-app messages, email, your blog.'],['Earned','Press, reviews, word of mouth.'],
   ['Paid','Ads, sponsorships, partners.'],['People','Sales, support, customer success.']]},
- {t:'steps',h:'Roll out in phases.',steps:[
+ {t:'steps',h:'Roll it out in phases',steps:[
   ['Internal','Team uses it. Support and sales get trained.'],['Beta','A small group. Fix what breaks.'],['General release','Everyone. The full announcement.'],['Follow-up','Check the metric. Share the result.']]},
  {t:'quiz',q:[
   ['A small bug fix deserves…',['A press tour','A release note','A launch event'],1,'Match the noise to the size of the change. A fix gets a note.'],
@@ -403,7 +407,7 @@ function home(){
   const total=M.reduce((a,m)=>a+m.cards.length,0),done=M.reduce((a,m)=>a+seenCount(m),0);
   app.style.removeProperty('--c');
   app.innerHTML=`<div class="top"><h1>PM Foundations prep</h1>
-  <p class="lead muted">${done?done+' of '+total+' cards done.':'Six modules of about 15 minutes. Each one ends with an artifact for your final presentation.'}</p></div>
+  <p class="lead muted">${done?done+' of '+total+' cards done.':'Six short modules, about 15 minutes each. Each one ends with a piece of your final presentation.'}</p></div>
   <div class="tiles">${M.map((m,i)=>`<a class="tile" href="#${m.id}" style="--c:${C[m.col][0]};--on:${C[m.col][1]};text-decoration:none">
     <span class="shape"></span><span class="num">${i+1}</span><h3>${m.name}${seenCount(m)>=m.cards.length?' ✓':''}</h3><small>${m.official}</small>
     <div class="bar"><i style="width:${Math.round(seenCount(m)/m.cards.length*100)}%"></i></div></a>`).join('')}
@@ -415,7 +419,7 @@ function home(){
 
 /* ---------- card renderers ---------- */
 const R={
- big(c,el,st){st.classList.add('full');el.innerHTML=`<h2>${c.h}</h2><p class="lead">${c.p}</p>`},
+ big(c,el,st,m){st.classList.add('full');el.innerHTML=`<h2>${c.h}</h2><p class="lead">${c.p}</p>${c.on?`<ul class="cover">${c.on.map(x=>`<li>${x}</li>`).join('')}</ul><p class="make">You’ll finish with your <b>${m.artifact}</b>.</p>`:''}`},
  cols(c,el){el.innerHTML=`<h2>${c.h}</h2>${c.p?`<p class="lead">${c.p}</p>`:''}<div class="grid">${c.cols.map((x,i)=>`<div class="blk k${i}"><h3>${x[0]}</h3><p>${x[1]}</p><em>${x[2]}</em></div>`).join('')}</div>`},
  steps(c,el){el.innerHTML=`<h2>${c.h}</h2><div class="steps">${c.steps.map((x,i)=>`<div class="blk k${i%6}"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('')}</div>`},
  vs(c,el){el.innerHTML=`<h2>${c.h}</h2><div class="vs"><div class="l hd">${c.a}</div><div class="r hd">${c.b}</div>${c.rows.map(r=>`<div class="l">${r[0]}</div><div class="r">${r[1]}</div>`).join('')}</div>`},
@@ -461,7 +465,7 @@ const R={
   };
   show();
  },
- ask(c,el){el.innerHTML=`<h2>Questions for the live session</h2><p class="lead">The pre-read can’t answer these. Ask how the instructor handled them in practice.</p><div class="qs">${c.q.map((q,i)=>`<div class="blk k${i?1:0}">${q}</div>`).join('')}</div>`},
+ ask(c,el){el.innerHTML=`<h2>Questions for the live session</h2><p class="lead">You can’t learn these from a reading. Ask the instructor what they actually did.</p><div class="qs">${c.q.map((q,i)=>`<div class="blk k${i?1:0}">${q}</div>`).join('')}</div>`},
  persona(c,el){el.innerHTML=`<h2>${c.h}</h2><div class="persona"><div class="face"></div><div class="facts">
    <h3>Maya, 34. Two kids, full-time job.</h3>
    <p><b>Wants</b> dinner sorted without thinking about it.</p>
@@ -516,7 +520,7 @@ const R={
  },
  build(c,el,st,m){
   const b=BUILD[m.id];
-  el.innerHTML=`<h2>${b.h}</h2><p class="lead">Use a product idea you care about and carry it through all six modules. Greyed words are an example.</p>
+  el.innerHTML=`<h2>${b.h}</h2><p class="lead">Pick a product idea you care about and use it in all six modules. The grey words are just an example.</p>
    <div class="preview" aria-live="polite"></div><div class="form">${b.f.map(f=>{const id=m.id+f[0],val=S.v[id]||'';
     return `<label for="${id}">${f[1]}${Array.isArray(f[2])?`<select id="${id}"><option value="">Choose…</option>${f[2].map(o=>`<option${o===val?' selected':''}>${o}</option>`).join('')}</select>`:`<input id="${id}" value="${esc(val)}" placeholder="${esc(f[2])}" autocomplete="off">`}</label>`}).join('')}</div>`;
   const pv=el.querySelector('.preview'),show=()=>pv.innerHTML=fill(m.id);
