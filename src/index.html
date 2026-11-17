@@ -221,8 +221,8 @@ const C={yellow:['var(--yellow)','var(--ink)'],coral:['var(--coral)','var(--ink)
 
 const M=[
 {id:'m1',name:'Think',official:'Develop Strategic Product Thinking',col:'yellow',artifact:'Problem Hook',cards:[
- {t:'big',h:'Product thinking starts with one question: what did it change?',p:'Shipping a feature is output. People behaving differently because of it, in a way that also helps the business, is the outcome. That’s what a PM gets judged on.',on:['Outputs vs outcomes','Weighing ideas','B2C vs B2B','Framing a problem']},
- {t:'sort',h:'Output or outcome?',buckets:['Output','Outcome'],hints:['We made a thing','Something changed'],items:[
+ {t:'big',h:'What did your last feature actually change for users?',p:'That’s the question a PM keeps asking. Shipping a feature is output. People behaving differently because of it, in a way that also helps the business, is the outcome you get judged on.',on:['Outputs vs outcomes','Weighing ideas','B2C vs B2B','Framing a problem']},
+ {t:'sort',h:'Is each one an output or an outcome?',buckets:['Output','Outcome'],hints:['We made a thing','Something changed'],items:[
   ['Launched dark mode',0,'A launch is something you made. Nothing has changed for the user yet.'],
   ['Checkout time dropped 30%',1,'Users feel this change. That makes it an outcome.'],
   ['Released version 2 of the app',0,'A release is a delivery. Ask what it changed.'],
@@ -235,7 +235,7 @@ const M=[
   ['Effort','What does it cost to build?','Two weeks, one squad.']]},
  {t:'vs',h:'Selling to people vs selling to companies',a:'B2C',b:'B2B',rows:[
   ['The user buys','A boss or buyer signs'],['Decides in seconds','Decides in months'],['Habit and emotion','ROI and risk'],['Grows by word of mouth','Grows through sales']]},
- {t:'sort',h:'B2C or B2B?',buckets:['B2C','B2B'],items:[
+ {t:'sort',h:'Is each one B2C or B2B?',buckets:['B2C','B2B'],items:[
   ['Duolingo',0,'One person downloads it and uses it. Buyer and user are the same.'],
   ['Workday',1,'HR software bought by a company. The employees using it didn’t choose it.'],
   ['Six-month sales cycle',1,'Long cycles mean many approvers. That is a company buying.'],
@@ -247,12 +247,12 @@ const M=[
  {t:'quiz',q:[
   ['Which one is an outcome?',['We shipped onboarding v2','New users finish setup twice as fast','The team closed 30 tickets'],1,'Shipping and closing tickets are outputs. Faster setup is a change for the user.'],
   ['What usually makes B2B different?',['The buyer is often not the user','Users never pay','There are no competitors'],0,'In B2B the person who signs is often not the person who uses it.'],
-  ['Users love it, it takes a year, and it moves no business number.',['Build it now','Park it','Double the team'],1,'It wins on user value only. No business value and a huge effort means it waits.']]},
+  ['Users love an idea, but it takes a year to build and moves no business number. What do you do?',['Build it now','Park it','Double the team'],1,'It wins on user value only. No business value and a huge effort means it waits.']]},
  {t:'ask',q:['How do you push back when a stakeholder asks for a feature instead of an outcome?','Which of the three pillars gets overruled most often in your company, and by whom?']},
  {t:'build'}]},
 
 {id:'m2',name:'Discover',official:'Discover Product Opportunities via Qualitative Signals',col:'coral',artifact:'Persona & Journey Map',cards:[
- {t:'big',h:'Discovery means learning how people get by without you.',p:'Before your product exists, people manage with a spreadsheet, a group chat or a habit. Switching costs them effort. So you need to understand that workaround well, and be clearly better than it.',on:['Workarounds as clues','Personas','Journey maps','The experience gap']},
+ {t:'big',h:'People already get by without you.',p:'Before your product exists, people manage with a spreadsheet, a group chat or a habit. Switching costs them effort. So you need to understand that workaround well, and be clearly better than it.',on:['Workarounds as clues','Personas','Journey maps','The experience gap']},
  {t:'reveal',h:'Workarounds are clues',p:'Each one is someone patching a gap. Tap to see which gap.',tiles:[
   ['Screenshots of receipts','Logging an expense takes too long.'],
   ['A spreadsheet with nine tabs','The tool doesn’t fit how the team plans.'],
@@ -265,14 +265,14 @@ const M=[
   ['“I would use that”','“Last week I did this”'],['Feature wish lists','Hacks and workarounds'],['Polite compliments','Sighs, swearing, giving up']]},
  {t:'quiz',q:[
   ['Who is usually your top competitor?',['The market leader','The status quo','A new startup'],1,'Most people don’t switch to a rival. They keep doing what they already do.'],
-  ['A customer keeps a nine-tab spreadsheet next to your tool. That is…',['A training issue','A signal of an unmet need','Nothing to worry about'],1,'A workaround is effort someone spends because the product falls short.'],
-  ['Where is the opportunity on a journey map?',['The first step','Where expectation and reality are furthest apart','The final step'],1,'The position of the step doesn’t matter. The widest gap between hope and reality does.']]},
+  ['A customer keeps a nine-tab spreadsheet next to your tool. What does that tell you?',['A training issue','A signal of an unmet need','Nothing to worry about'],1,'A workaround is effort someone spends because the product falls short.'],
+  ['Where on a journey map is the best opportunity?',['The first step','Where expectation and reality are furthest apart','The final step'],1,'The position of the step doesn’t matter. The widest gap between hope and reality does.']]},
  {t:'ask',q:['What interview question gets you the most honest answers?','When did a workaround lead you to a product you actually shipped?']},
  {t:'build'}]},
 
 {id:'m3',name:'Measure',official:'Use Analytics and Metrics for Data-Driven Decisions',col:'blue',artifact:'Testable Hypothesis',cards:[
- {t:'big',h:'Metrics are only useful if they help you decide.',p:'Dashboards fill up with totals that only ever go up. The useful numbers are rates tied to user value. When one of those moves, you know where to look and what to try next.',on:['Vanity vs strategic metrics','The AARRR funnel','From data to hypothesis']},
- {t:'sort',h:'Vanity or strategic?',buckets:['Vanity','Strategic'],hints:['Only goes up','Changes a decision'],items:[
+ {t:'big',h:'Which numbers on your dashboard actually matter?',p:'Dashboards fill up with totals that only ever go up. The useful numbers are rates tied to user value. When one of those moves, you know where to look and what to try next.',on:['Vanity vs strategic metrics','The AARRR funnel','From data to hypothesis']},
+ {t:'sort',h:'Is each metric vanity or strategic?',buckets:['Vanity','Strategic'],hints:['Only goes up','Changes a decision'],items:[
   ['Total downloads, all time',0,'It can only go up, so it never tells you to change course.'],
   ['Share of new users who finish setup',1,'A rate. If it drops, you know exactly where to look.'],
   ['Page views',0,'Volume without context. More views doesn’t mean more value.'],
@@ -289,14 +289,14 @@ const M=[
   ['Decision window','The date we look at the data and decide.']]},
  {t:'quiz',q:[
   ['Which one is a vanity metric?',['Total sign-ups ever','Week-4 retention','Activation rate'],0,'A lifetime total only goes up. It can’t tell you to change anything.'],
-  ['People sign up but never create a first plan. Which stage leaks?',['Acquisition','Activation','Revenue'],1,'They signed up, so acquisition works. They never got a first win, so activation leaks.'],
+  ['People sign up but never create a first meal plan. Which funnel stage is leaking?',['Acquisition','Activation','Revenue'],1,'They signed up, so acquisition works. They never got a first win, so activation leaks.'],
   ['What is a guardrail?',['The metric you want to grow','A metric that must not get worse','A deadline'],1,'The success metric is what you chase. The guardrail protects what you already have.']]},
  {t:'ask',q:['Which metric did you stop tracking, and what did you replace it with?','How do you pick a decision window when traffic is low?']},
  {t:'build'}]},
 
 {id:'m4',name:'Plan',official:'Build High-Velocity Product Roadmaps',col:'green',artifact:'Roadmap & Simple PRD',cards:[
  {t:'big',h:'A roadmap is a list of priorities, not a calendar.',p:'It shows what the team works on first and why. Firm near the top, looser further out. The hard part is deciding what has to wait.',on:['Effort vs value','Now, Next, Later','Scoping an MVP','A one-page PRD']},
- {t:'sort',h:'Where does each idea land?',grid:1,buckets:['Quick win','Big bet','Fill-in','Time sink'],hints:['High value · low effort','High value · high effort','Low value · low effort','Low value · high effort'],items:[
+ {t:'sort',h:'Where does each idea land on effort vs value?',grid:1,buckets:['Quick win','Big bet','Fill-in','Time sink'],hints:['High value · low effort','High value · high effort','Low value · low effort','Low value · high effort'],items:[
   ['Reorder last week’s plan in one tap. Users beg for it. Two days.',0,'Users beg for it and it takes two days. High value, low effort.'],
   ['Build a plan from a photo of your fridge. Huge demand. Four months.',1,'Huge demand, but four months of work. High value, high effort.'],
   ['New colors for the app icon. Nobody asked. One afternoon.',2,'Nobody asked, but it’s one afternoon. Low value, low effort.'],
@@ -315,14 +315,14 @@ const M=[
   ['Problem','Who hurts, and why?'],['Goal','Which metric moves?'],['Scope','Musts in. Won’ts out.'],
   ['User stories','As a…, I want…, so that…'],['Open questions','What we don’t know yet.']]},
  {t:'quiz',q:[
-  ['High value, low effort is a…',['Quick win','Big bet','Time sink'],0,'A big bet is high effort. A time sink is low value. Lots of value for little work is a quick win.'],
-  ['What does “Later” mean?',['Committed with a date','An idea we may explore','Cancelled'],1,'Later is a parking spot for ideas. No commitment, no date, not cancelled.'],
-  ['The W in MoSCoW stands for…',['Would be nice','Won’t have this time','Work in progress'],1,'“Nice if time allows” is Could. Won’t names what is out, which protects the scope.']]},
+  ['On an effort vs value grid, what do you call high value with low effort?',['Quick win','Big bet','Time sink'],0,'A big bet is high effort. A time sink is low value. Lots of value for little work is a quick win.'],
+  ['On a Now, Next, Later roadmap, what does “Later” mean?',['Committed with a date','An idea we may explore','Cancelled'],1,'Later is a parking spot for ideas. No commitment, no date, not cancelled.'],
+  ['What does the W in MoSCoW stand for?',['Would be nice','Won’t have this time','Work in progress'],1,'“Nice if time allows” is Could. Won’t names what is out, which protects the scope.']]},
  {t:'ask',q:['How do you say no to a stakeholder whose request lands in “Later”?','How detailed is your PRD now that AI can draft one in a minute?']},
  {t:'build'}]},
 
 {id:'m5',name:'Test',official:'Run Effective Product Experimentation',col:'purple',artifact:'Experiment Brief',cards:[
- {t:'big',h:'Experiments let you find out cheaply before you build.',p:'Every idea rests on a few guesses. Test the riskiest one first. The right method depends on what you want to learn, how much traffic you have and what it costs to be wrong.',on:['Six ways to test','Choosing a method','The experiment brief']},
+ {t:'big',h:'Find out cheaply before you build expensively.',p:'Every idea rests on a few guesses. Test the riskiest one first. The right method depends on what you want to learn, how much traffic you have and what it costs to be wrong.',on:['Six ways to test','Choosing a method','The experiment brief']},
  {t:'reveal',h:'Six ways to test an idea',tiles:[
   ['A/B test','Two versions on live traffic. Compare one metric.'],
   ['Fake door','Show the button before building the feature. Count the clicks.'],
@@ -330,8 +330,8 @@ const M=[
   ['Concierge','Deliver it by hand to a few users first.'],
   ['Staged rollout','Ship to 5%, watch the guardrails, then widen.'],
   ['Interviews','Ask 5 to 8 people about the last time it happened.']]},
- {t:'picker',h:'Which method fits your situation?'},
- {t:'sort',h:'Which test fits?',buckets:['A/B test','Fake door','Prototype test'],items:[
+ {t:'picker',h:'Which test method fits your situation?'},
+ {t:'sort',h:'Which test fits each question?',buckets:['A/B test','Fake door','Prototype test'],items:[
   ['Does “Start free” beat “Try now”? 50,000 visits a day.',0,'Two versions and plenty of traffic. Compare them live.'],
   ['Would anyone want a meal-swap feature? It isn’t built.',1,'It isn’t built, so measure demand first. Show the button and count clicks.'],
   ['Can people find the shopping list in the new menu?',2,'This asks whether people can use it. Watch five of them try.'],
@@ -341,21 +341,21 @@ const M=[
   ['Hypothesis','The guess you are testing.'],['Method','How you will test it.'],['Audience','Who sees it, and how many.'],
   ['Success metric','The number that should move.'],['Guardrails','What must not break.'],['Decision rule','If X, ship. If Y, stop.']]},
  {t:'quiz',q:[
-  ['Low traffic, and you want to know if people can use it.',['A/B test','Prototype test with five users','Press release'],1,'An A/B test needs lots of traffic. Usability problems show up with five people.'],
+  ['You have little traffic and want to know if people can use a new design. Which test?',['A/B test','Prototype test with five users','Press release'],1,'An A/B test needs lots of traffic. Usability problems show up with five people.'],
   ['What does a fake door measure?',['Usability','Demand','Revenue'],1,'There is nothing to use or pay for yet. Clicks only show that people want it.'],
   ['When do you write the decision rule?',['After the results','Before the test starts','Whenever'],1,'Set the rule first, so the result can’t bend your judgment.']]},
  {t:'ask',q:['What experiment gave you a result you didn’t want, and what did you do?','How do you test when you only have a few hundred users?']},
  {t:'build'}]},
 
 {id:'m6',name:'Launch',official:'Launch Impactful GTM Plans',col:'pink',artifact:'GTM Launch Plan',cards:[
- {t:'big',h:'Go-to-market is how a change reaches the right people.',p:'Someone has to decide who hears about it, where, and in what order. A small fix needs a release note. A new product needs a plan.',on:['Five GTM choices','Sizing a launch','Channels','Rolling out in phases']},
+ {t:'big',h:'Launching is more than pressing deploy.',p:'Someone has to decide who hears about it, where, and in what order. A small fix needs a release note. A new product needs a plan.',on:['Five GTM choices','Sizing a launch','Channels','Rolling out in phases']},
  {t:'steps',h:'A GTM plan makes five choices.',steps:[
   ['Goal','What success looks like'],['Audience','Who needs to hear it'],['Size','How loud to be'],['Channels','Where to say it'],['Phases','In what order']]},
  {t:'cols',h:'Match the noise to the change',cols:[
   ['Small','Release note. In-app tip.','A fix or a tweak'],
   ['Medium','Email, blog, banner, sales brief.','A new feature'],
   ['Big','Campaign, press, event, full training.','A new product or market']]},
- {t:'sort',h:'How big is this launch?',buckets:['Small','Medium','Big'],items:[
+ {t:'sort',h:'How big should each launch be?',buckets:['Small','Medium','Big'],items:[
   ['Fixed a sync bug',0,'A fix needs a release note, not a campaign.'],
   ['New shared shopping list',1,'A new feature for people who already use the app. Email and in-app will do.'],
   ['Opening in a new country',2,'A new market knows nothing about you. It needs the full push.'],
@@ -367,7 +367,7 @@ const M=[
  {t:'steps',h:'Roll it out in phases',steps:[
   ['Internal','Team uses it. Support and sales get trained.'],['Beta','A small group. Fix what breaks.'],['General release','Everyone. The full announcement.'],['Follow-up','Check the metric. Share the result.']]},
  {t:'quiz',q:[
-  ['A small bug fix deserves…',['A press tour','A release note','A launch event'],1,'Match the noise to the size of the change. A fix gets a note.'],
+  ['What kind of launch does a small bug fix need?',['A press tour','A release note','A launch event'],1,'Match the noise to the size of the change. A fix gets a note.'],
   ['What is a beta for?',['Finding what breaks with a small group','Maximizing revenue','Press coverage'],0,'Revenue and press come with the general release. A beta finds problems while the audience is small.'],
   ['What do you decide first in a GTM plan?',['The channels','The goal','The launch party'],1,'The goal decides the audience, the size and the channels. Everything else follows from it.']]},
  {t:'ask',q:['What did your best launch do in the week before release?','How do you keep sales and support in sync with product during a rollout?']},
@@ -513,7 +513,7 @@ const R={
   el.querySelectorAll('.frow').forEach(b=>b.onclick=()=>{sel=+b.dataset.i;show()});show();
  },
  picker(c,el){
-  const G=[['What do you need to know?',['Do they want it?','Can they use it?','Does it move the metric?']],['How much traffic?',['Low','High']],['If you’re wrong?',['Cheap to undo','Costly']]];
+  const G=[['What do you want to learn?',['Do they want it?','Can they use it?','Does it move the metric?']],['How much traffic do you have?',['Low','High']],['What happens if you’re wrong?',['Cheap to undo','Costly']]];
   const v=[0,0,0];
   const ans=()=>{const[q,t,r]=v;
    if(q===1)return['Prototype test','Five people and a clickable mock find most usability problems. Traffic doesn’t matter.'+(r?' Test before any code ships.':'')];
