@@ -62,7 +62,11 @@ button{border:0;cursor:pointer;background:none;padding:0;text-align:left}
 /* player */
 .nav{display:flex;gap:12px;align-items:center}
 .sq{width:44px;height:44px;flex:none;border-radius:var(--rs);background:var(--soft);display:grid;place-items:center;font-size:1.2rem;font-weight:700}
-.segs{display:flex;gap:5px;flex:1;min-width:0}
+.mnum{width:44px;height:44px;flex:none;border-radius:var(--rs);background:var(--c);color:var(--on);display:grid;place-items:center;font:800 1.5rem/1 var(--display)}
+.mtitle{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mtitle b{font:800 1.35rem/1.05 var(--display);letter-spacing:-.02em}
+.mtitle small{font-size:.88rem;line-height:1.25;color:var(--muted)}
+.segs{display:flex;gap:5px;min-width:0}
 .segs button{flex:1;height:14px;border-radius:4px;background:var(--soft)}
 .segs button.seen{background:color-mix(in srgb,var(--c) 45%,var(--soft))}
 .segs button.on{background:var(--c)}
@@ -545,7 +549,8 @@ const CUE={reveal:['Tap a tile to open it','.grid','.flip'],sort:['Tap where it 
 function play(m){
   let i=Math.min(S.pos[m.id]||0,m.cards.length-1);
   setCol(app,m.col);
-  app.innerHTML=`<div class="nav"><a class="sq" href="#home" aria-label="All modules" style="text-decoration:none;color:inherit">←</a><div class="segs">${m.cards.map((_,k)=>`<button data-k="${k}" aria-label="Card ${k+1}"></button>`).join('')}</div></div>
+  app.innerHTML=`<div class="nav"><a class="sq" href="#home" aria-label="All modules" style="text-decoration:none;color:inherit">←</a><span class="mnum">${M.indexOf(m)+1}</span><div class="mtitle"><b>${m.name}</b><small>${m.official}</small></div></div>
+   <div class="segs">${m.cards.map((_,k)=>`<button data-k="${k}" aria-label="Card ${k+1}"></button>`).join('')}</div>
    <section class="stage"></section><div class="ctrl"><button class="btn" id="prev">Back</button><button class="btn go" id="next"></button></div>`;
   const stage=app.querySelector('.stage'),next=app.querySelector('#next'),prev=app.querySelector('#prev');
   const show=()=>{
